@@ -3,6 +3,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import Games from './component/games/Games';
 import Home from './component/home/Home';
+import Loader from './component/loader/Loader';
 import LoginForm from './component/login/LoginForm';
 import FormProtect from './component/protect-route/FormProtected';
 import ProtectRoute from './component/protect-route/ProtectRoute';
@@ -15,7 +16,7 @@ export const StatusContext = createContext();
 export const UserDataContext = createContext();
 
 const App = () => {
-
+  const [HideLoader, setHideLoader] = useState(false);
   const [Status, setStatus] = useState(
     window.location.pathname.split('/').includes('register') ?
       'register'
@@ -39,6 +40,7 @@ const App = () => {
 
   useEffect(_ => {
     getUserData();
+    setHideLoader(true);
   }, [])
 
   const routes = createHashRouter([
@@ -66,9 +68,9 @@ const App = () => {
                   path: ':filter/:type',
                   element: <ProtectRoute><Games /></ProtectRoute>,
                   errorElement: <ErrorPage />
-                },{
-                  path:'game-details/:id',
-                  element:<ProtectRoute><GameDetails /></ProtectRoute>,
+                }, {
+                  path: 'game-details/:id',
+                  element: <ProtectRoute><GameDetails /></ProtectRoute>,
                   errorElement: <ErrorPage />
                 }
               ]
@@ -96,7 +98,8 @@ const App = () => {
   return (
     <StatusContext.Provider value={{ Status, setStatus }} >
       <UserDataContext.Provider value={{ User, setUser }}>
-          <RouterProvider router={routes} />
+        <Loader hide={HideLoader} onTop={true} />
+        <RouterProvider router={routes} />
       </UserDataContext.Provider>
     </StatusContext.Provider>
   );
