@@ -1,0 +1,115 @@
+$primary: #24baef;
+$secondary: #272b30;
+
+@import "./../../node_modules/bootstrap/scss/functions";
+@import "./../../node_modules/bootstrap/scss/variables";
+@import "./../../node_modules/bootstrap/scss/maps";
+@import "./../../node_modules/bootstrap/scss/mixins";
+@import "./../../node_modules/bootstrap/scss/utilities";
+$new-colors: (
+    (
+        "bgTransparent": rgba(36, 186, 239, 0.6),
+        "secondFontColor": #949cb0,
+        "muted": #6c757d,
+    )
+);
+
+$theme-colors: map-merge(
+    $map1: $new-colors,
+    $map2: $theme-colors,
+);
+
+$spacers: map-merge(
+    (
+        "6": $spacer * 5,
+    ),
+    $spacers
+);
+
+$utilities: map-merge(
+    $utilities,
+    (
+        "shadow":
+            map-merge(
+                map-get($utilities, "shadow"),
+                (
+                    values:
+                        map-merge(
+                            map-get(map-get($utilities, "shadow"), "values"),
+                            (
+                                md: 0rem 0rem 0.7rem 0.05rem rgba($black, 0.9),
+                                sm-light: 0 0.125rem 0.25rem rgba(150, 150, 150, 0.9),
+                                sm-simi-light: 0 0.125rem 0.25rem rgba(64, 64, 64, 0.9),
+                            )
+                        ),
+                )
+            ),
+    )
+);
+
+$utilities: map-merge(
+    $utilities,
+    (
+        "font-size":
+            map-merge(
+                map-get($utilities, "font-size"),
+                (
+                    values:
+                        map-merge(
+                            map-get(map-get($utilities, "font-size"), "values"),
+                            (
+                                7: 0.9rem,
+                                8: 0.7rem,
+                                7-lg: 2.8rem,
+                            )
+                        ),
+                )
+            ),
+    )
+);
+$utilities: map-merge(
+    $utilities,
+    (
+        "border-color":
+            map-merge(
+                map-get($utilities, "border-color"),
+                (
+                    values:
+                        map-merge(
+                            map-get(map-get($utilities, "border-color"), "values"),
+                            (
+                                "borderColor": #a8a8a83d,
+                            )
+                        ),
+                )
+            ),
+    )
+);
+$utilities: map-merge(
+    $utilities,
+    (
+        "background-color":
+            map-merge(
+                map-get($utilities, "background-color"),
+                (
+                    values: map-merge(map-get(map-get($utilities, "background-color"), "values"), $new-colors),
+                )
+            ),
+    )
+);
+
+$utilities: map-merge(
+    $utilities,
+    (
+        "color":
+            map-merge(
+                map-get($utilities, "color"),
+                (
+                    values: map-merge(map-get(map-get($utilities, "color"), "values"), $new-colors),
+                )
+            ),
+    )
+);
+
+@import "../../node_modules/bootstrap/scss/utilities/api";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

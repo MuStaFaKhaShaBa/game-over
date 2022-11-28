@@ -1,0 +1,9 @@
+.logo {
+    max-width: 8rem;
+}
+.btn-forget{
+    color: var(--bs-gray) !important;
+}
+.btn-forget:hover{
+    color: var(--bs-white) !important;
+}

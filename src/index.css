@@ -1,0 +1,61 @@
+#root {
+    padding-top: 5rem;
+}
+body::-webkit-scrollbar {
+    width: .7rem;
+    background-color: var(--bs-dark);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--bs-gray-700);
+    border-radius: .7rem;
+}
+::selection{
+    background-color: var(--bs-secondFontColor);
+    color: var(--bs-dark);
+}
+[class*="btn-outl"]:hover {
+    color: #fff;
+}
+.d-flex-center {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+.w-fit-content{
+    width: fit-content;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.min-height-navLESS {
+    min-height: calc(100vh - 80px);
+}
+/* ---------- S T A R T - H T M L - F O N T - S I Z E - R E S P O N S I V E  ---------- */
+
+@media screen and (min-width: 1200px) {
+    html {
+        font-size: 15px !important;
+    }
+}
+@media screen and (max-width: 1199px) {
+    html {
+        font-size: 14px !important;
+    }
+}
+@media screen and (max-width: 992px) {
+    html {
+        font-size: 13px !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 12px !important;
+    }
+}
+@media screen and (max-width: 575px) {
+    html {
+        font-size: 10px !important;
+    }
+}
+/* ---------- E N D - H T M L - F O N T - S I Z E - R E S P O N S I V E  ---------- */

@@ -1,0 +1,46 @@
+.game .badge{
+    background-color: #3a3f44;
+}
+.under-line {
+    position: relative;
+}
+.under-line::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 30%;
+    min-width: 250px;
+    height: 2px;
+    background-color: #32383e;
+}
+h1.under-line::before {
+    height: 4px;
+    width: 50%;
+}
+.game .play-now {
+    width: 80%;
+    max-width: 250px;
+}
+
+@media (min-width: 768px) {
+    .left-side {
+        position: sticky;
+        top: 80px;
+    }
+}
+@media (max-width: 768px) {
+    .game .play-now,
+    .game .badge{
+        padding: 1rem !important;
+    }
+    .game .play-now,
+    .game .badge,
+    .game .info-title {
+        font-size: 1.5rem !important;
+    }
+    .game p,
+    .game .minimum-req {
+        font-size: 1.5rem;
+    }
+}

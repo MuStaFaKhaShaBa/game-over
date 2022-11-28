@@ -1,0 +1,38 @@
+.games-container {
+    @media  (max-width: 575px) {
+        padding-inline: 15px !important;
+    }
+}
+a.game {
+    color: initial;
+
+    .card {
+        transition: 0.3s;
+    }
+
+    &:hover {
+        color: initial !important;
+        .card {
+            transform: scale(1.035);
+        }
+    }
+
+    .card-footer .gener {
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+            background-color: var(--bs-primary) !important;
+            color: var(--bs-white) !important;
+        }
+    }
+    .card-footer svg {
+        font-size: 1.2rem;
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+            color: var(--bs-primary) !important;
+        }
+    }
+}

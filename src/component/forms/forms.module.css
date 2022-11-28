@@ -1,0 +1,16 @@
+.forms {
+    min-height: calc(100vh - 80px);
+}
+.poster {
+    background: url("./../../assets/gaming.ebaf2ffc84f4451d.jpg") no-repeat center;
+    background-size: cover;
+}
+.container{
+    box-shadow: .25rem .25rem 1.5rem var(--bs-gray-800);
+}
+@media (max-width: 350px) {
+    .forms button,
+    a {
+        font-size: 0.7rem !important;
+    }
+}
