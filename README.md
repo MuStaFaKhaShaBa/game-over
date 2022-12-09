@@ -12,6 +12,6 @@
 
 https://mustafakhashaba.github.io/game-over/
 
-## Reop :
+## Repo :
 
 https://github.com/MuStaFaKhaShaBa/game-over
