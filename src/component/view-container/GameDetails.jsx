@@ -25,7 +25,6 @@ const GameDetails = () => {
     useEffect(_ => {
         getGamesData('id', id, true).then(data => {
             setGame(data);
-            console.log(data);
             setHideLoader(true);
             window.document.title = `Game ${data.title}`
         });

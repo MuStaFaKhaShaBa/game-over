@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './forms.module.css'
 
 export const sentDataToAPI = async (type,User) => {
-    const Response = await axios.post(`https://route-egypt-api.herokuapp.com/${type}`,User);
+    const Response = await axios.post(`https://route-movies-api.vercel.app/${type}`,User);
     return Response;
 }
 
